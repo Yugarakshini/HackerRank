@@ -1,0 +1,21 @@
+static boolean isAnagram(String a, String b) {
+        // Complete the function
+          // Check if lengths are different; if so, they cannot be anagrams
+    if (a.length() != b.length()) {
+        return false;
+    } else {
+        String a1=a.toLowerCase();
+        String b1=b.toLowerCase();
+        // Convert strings to character arrays
+        char A[] = a1.toCharArray();
+        char B[] = b1.toCharArray();
+
+        // Sort character arrays
+        java.util.Arrays.sort(A);
+        java.util.Arrays.sort(B);
+
+        // Compare sorted arrays
+        
+        return java.util.Arrays.equals(A, B);
+    }
+}
