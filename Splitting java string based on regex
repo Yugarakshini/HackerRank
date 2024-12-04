@@ -1,0 +1,29 @@
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String s = scan.nextLine();
+        scan.close();
+        
+        // Splitting the string based on non-alphabetic characters
+        String[] arrOfStr = s.split("[^A-Za-z]+");
+
+        // Filter out any empty strings that might result from leading/trailing delimiters
+        List<String> tokens = new ArrayList<>();
+        for (String str : arrOfStr) {
+            if (!str.isEmpty()) {
+                tokens.add(str);
+            }
+        }
+
+        // Output the number of tokens
+        System.out.println(tokens.size());
+        
+        // Print each token on a new line
+        for (String token : tokens) {
+            System.out.println(token);
+        }
+    }
+}
