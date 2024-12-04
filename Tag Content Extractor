@@ -1,0 +1,34 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution{
+	public static void main(String[] args){
+		
+		Scanner in = new Scanner(System.in);
+		int testCases = Integer.parseInt(in.nextLine());//getting n as input
+		while(testCases>0){//for all test cases check the following
+			String line = in.nextLine();//get a string as input
+			
+          	Pattern p = Pattern.compile("<(.+)>([^<]+)<(/\\1)>");//the regex expression
+            Matcher m = p.matcher(line);//
+
+            boolean f = false;
+            while(m.find()) {
+                System.out.println(m.group(2));
+                f = true;
+            }
+    
+            if(!f) {
+                System.out.println("None");
+            }
+			
+			testCases--;
+		}
+	}
+}
+
+
+
